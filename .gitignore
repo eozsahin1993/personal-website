@@ -1,0 +1,29 @@
+# Jekyll-generated folders
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Bundler dependencies
+.bundle/
+vendor/bundle/
+Gemfile.lock
+
+# Log files and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Node modules (if using npm)
+node_modules/
+
+# VS Code settings (if using VS Code)
+.vscode/
+
+# Thumbnails (macOS-specific)
+._*
+
+# Ignore deployment-related files
+.env
+
