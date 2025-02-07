@@ -4,8 +4,8 @@ highlighter:      rouge
 
 # Setup
 title:            Emre Ozsahin
-tagline:          'A Jekyll theme'
-description:      'Software Engineer with passion for mobile and web development.'
+tagline:          'Emre Ozsahin'
+description:      'Software Engineer with a passion for mobile and web development.'
 url:              https://eozsahin1993.github.io
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
