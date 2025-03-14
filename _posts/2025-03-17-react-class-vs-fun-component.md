@@ -6,7 +6,7 @@ categories:
 tags:
   - Today I learned
   - React
-  - Web front ends
+  - Web
 ---
 
 ## Today I Learned: React Class vs Function Components
