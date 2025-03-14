@@ -9,8 +9,6 @@ tags:
   - Web
 ---
 
-## Today I Learned: React Class vs Function Components
-
 Today, I was updating one of the existing React components in our Kustomer web codebase to prefetch saved search graph data upon a property change. Our existing React component appeared to be a class component like below:
 
 ```ts
