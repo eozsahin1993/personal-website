@@ -91,3 +91,12 @@ article + *,
 button.disqus-load {
   margin-top: 1em;
 }
+
+#sidebar {
+  .profile-pic {
+    border-radius: 50%; 
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+  }
+}

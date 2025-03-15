@@ -11,7 +11,7 @@ tags:
 
 Today, I was updating one of the existing React components in our Kustomer web codebase to prefetch saved search graph data upon a property change. Our existing React component appeared to be a class component like below:
 
-```ts
+```tsx
 export class SearchLayout extends React.Component<React.PropsWithChildren<SearchLayoutProps>> {
     componentDidMount() {
         // Component logic...
@@ -32,7 +32,7 @@ export class SearchLayout extends React.Component<React.PropsWithChildren<Search
 
 Up until this point, I knew that you could create React components either by extending React.Component class or simply creating a function like below: 
 
-```ts
+```tsx
 export default function SearchLayout(props: SearchLayoutProps) {
     // Component logic..
     return (
@@ -103,5 +103,5 @@ React Hooks offer significantly more functionality and flexibility compared to c
 Stay tuned for more articles, happy coding!
 
 #### Resources 
-- https://react.dev/reference/react
-- https://ui.dev/why-react-hooks
+- [https://react.dev/reference/react](https://react.dev/reference/react)
+- [https://ui.dev/why-react-hooks](https://ui.dev/why-react-hooks)
