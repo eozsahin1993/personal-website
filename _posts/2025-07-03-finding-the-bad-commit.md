@@ -5,8 +5,7 @@ categories:
   - Posts
 tags:
   - Today I learned
-  - React
-  - Web
+  - Git
 ---
 
 On a Thursday night right before the 4th of July, I was going through PRs when I suddenly realized that our standard charts had their top padding completely missing. Usually, this would be easy to spot, but our web code is pretty complicated, so in the first 15 minutes, we couldn't figure out the problem.
