@@ -17,7 +17,7 @@ I thought, there must be an easier way to spot this issue than going through com
 
 How `git bisect` works is brilliant, and it probably saved me at least an hour. You start by identifying a commit in the history where everything was working correctly, and a bad commit (usually the current one) where the problem exists. Internally, it uses a binary search to find the faulty commit, so you don't have to check each commit individually.
 
-For the geeks out there, binary search has a runtime complexity of **O(log n)** instead of the linear **O(n)** you'd get going commit by commit. So if I had 100 commits, with binary search, it would take me around \(\log_2 100 \approx 6.6\) attempts to find the culprit — pretty awesome!
+For the geeks out there, binary search has a runtime complexity of **O(log n)** instead of the linear **O(n)** you'd get going commit by commit. So if I had 100 commits, with binary search, it would take me around **log&#8322;(100) ≈ 6.6** attempts to find the culprit — pretty awesome!
 
 ### In action
 
