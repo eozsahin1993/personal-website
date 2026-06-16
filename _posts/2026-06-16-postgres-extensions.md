@@ -7,7 +7,7 @@ tags:
   - Postgres
 ---
 
-While working on my side project, [worldcuppick.co](https://www.worldcuppick.co) (a site where you predict World Cup games), I needed to add web push notifications. To build this, I used a Postgres extension I'd been wanting to try: `pg_cron`. It ended up doing more than I expected, so I wanted to write about it.
+While working on my side project, [worldcuppicks.co](https://www.worldcuppicks.co) (a site where you predict World Cup games), I needed to add web push notifications. To build this, I used a Postgres extension I'd been wanting to try: `pg_cron`. It ended up doing more than I expected, so I wanted to write about it.
 
 `pg_cron` lets you schedule cron jobs directly inside the database. World Cup matches kick off on a fixed schedule, and I wanted a notification to fire 10 minutes before each one. I could have wired this up externally, with something like AWS EventBridge, but doing it inside Postgres turned out to be much simpler.
 

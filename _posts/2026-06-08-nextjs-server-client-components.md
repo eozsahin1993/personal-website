@@ -9,7 +9,7 @@ tags:
   - React
 ---
 
-For [worldcuppick.co](https://www.worldcuppick.co), my World Cup prediction site, I used Next.js for the frontend. It comes with file based routing and built in image optimization, and the App Router makes data fetching simple. What I didn't realize until I started building real pages was how much of the app could ship with zero client side JavaScript, because of how Server and Client Components work.
+For [worldcuppicks.co](https://www.worldcuppicks.co), my World Cup prediction site, I used Next.js for the frontend. It comes with file based routing and built in image optimization, and the App Router makes data fetching simple. What I didn't realize until I started building real pages was how much of the app could ship with zero client side JavaScript, because of how Server and Client Components work.
 
 Coming from a React background where everything renders in the browser, my first instinct was to add `"use client"` to every file out of habit. Today I learned that's the wrong default, so I wanted to write about why, using a couple of components from the app.
 
