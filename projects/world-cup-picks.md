@@ -4,9 +4,9 @@ title: World Cup Picks
 permalink: /projects/world-cup-picks/
 ---
 
-<div style="display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap;">
-  <img src="{{ "/assets/images/projects/world-cup-picks-web.png" | relative_url }}" alt="World Cup Picks web view" style="max-width: 100%; flex: 2 1 320px; border-radius: 8px;" />
-  <img src="{{ "/assets/images/projects/world-cup-picks-mobile.png" | relative_url }}" alt="World Cup Picks mobile view" style="max-width: 100%; flex: 1 1 160px; border-radius: 8px;" />
+<div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
+  <img src="{{ "/assets/images/projects/world-cup-picks-web.png" | relative_url }}" alt="World Cup Picks web view" style="width: clamp(260px, 45vw, 480px); max-width: 100%; border-radius: 8px;" />
+  <img src="{{ "/assets/images/projects/world-cup-picks-mobile.png" | relative_url }}" alt="World Cup Picks mobile view" style="width: clamp(140px, 22vw, 230px); max-width: 100%; border-radius: 8px;" />
 </div>
 
 Predict FIFA World Cup 2026 match results, compete on leaderboards, and see how your picks stack up against friends.
