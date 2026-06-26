@@ -1,0 +1,29 @@
+name: Publish new posts to Medium
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_posts/*.md'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install dependencies
+        run: pip install PyYAML requests --quiet
+
+      - name: Publish new posts
+        env:
+          MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
+        run: |
+          git diff --name-only --diff-filter=A HEAD~1 HEAD -- '_posts/*.md' \
+            | grep -v 'CLAUDE.md' \
+            | while read file; do
+                echo "Publishing $file..."
+                python scripts/publish_to_medium.py "$file"
+              done
