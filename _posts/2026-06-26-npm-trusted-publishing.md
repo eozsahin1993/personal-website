@@ -21,9 +21,10 @@ Instead of a static token, GitHub Actions gets a short-lived OIDC token for each
 ### Requirements
 
 - npm CLI **11.5.1** or later
-- Node **22.14.0** or later
+- Node **24** or later (Node 22 is not sufficient — use 24)
+- `actions/setup-node` **v6** or later
 
-If you pin an older Node version in your workflow, it won't work.
+If you pin an older Node version or an older version of `setup-node`, it won't work.
 
 ### Step 1: Configure trusted publishers on npmjs.com
 
@@ -40,7 +41,7 @@ If you have multiple packages in the same monorepo (like I do, a CLI and a JS SD
 
 ### Step 2: Update your workflow
 
-You need `id-token: write` permission so the job can request an OIDC token. Then just run `npm publish --provenance --access public`, no `NODE_AUTH_TOKEN`, no secrets.
+You need `id-token: write` permission so the job can request an OIDC token. Then just run `npm publish --access public`, no `NODE_AUTH_TOKEN`, no secrets.
 
 ```yaml
 name: Publish CLI
@@ -49,27 +50,29 @@ on:
   push:
     tags: ['cli/v*.*.*']
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     defaults:
       run:
         working-directory: cli
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
 
       - run: npm ci
 
-      - run: npm publish --provenance --access public
+      - run: npm publish --access public
 ```
 
 That's it. No secrets to manage.
