@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - '_posts/*.md'
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Path to a specific post to (re-)publish, e.g. _posts/2026-07-03-go-iter-yield.md'
+        required: true
 
 jobs:
   publish:
@@ -17,7 +22,14 @@ jobs:
       - name: Install dependencies
         run: pip install PyYAML requests --quiet
 
+      - name: Publish specific post
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
+        run: python scripts/publish_to_devto.py "${{ inputs.file }}"
+
       - name: Publish new posts
+        if: github.event_name == 'push'
         env:
           DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
         run: |
