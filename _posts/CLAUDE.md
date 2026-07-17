@@ -38,6 +38,7 @@ Plain, first-person, conversational. Anchor the post in a real moment or problem
 - Code blocks always include a language tag: ` ```sql `, ` ```tsx `, ` ```yaml `, ` ```bash `
 - Bullet lists for multiple items (technical comparisons, pros/cons, steps)
 - Numbered lists only when order matters
+- Don't overuse inline code formatting in prose. Reserve backticks for the specific identifier a sentence is naming or introducing (a function, type, or flag), not every variable/keyword already shown in a code block above. A sentence with four or five backtick spans is harder to read, not clearer.
 
 ## TIL format (most posts follow this)
 
